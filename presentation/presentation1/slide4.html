@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Os Números - Sensor de Silo</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #444444;
+            background-color: #ffffff;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+        }
+        .page-content {
+            display: flex;
+            min-height: 720px;
+        }
+        .sidebar {
+            background-color: #f5f7f9;
+            width: 280px;
+            padding: 60px 30px;
+            position: relative;
+        }
+        .title-bar {
+            background-color: #1e88e5;
+            height: 8px;
+            width: 60px;
+            margin-bottom: 20px;
+        }
+        .sidebar-title {
+            color: #333333;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+        }
+        .main-content {
+            padding: 40px 50px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .section-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 10px;
+            color: #1e88e5;
+        }
+        .number-highlight-investment {
+            color: #1e88e5;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .number-highlight-cost {
+            color: #333333;
+            font-weight: 700;
+            font-size: 22px;
+        }
+        .number-highlight-saving {
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 22px;
+        }
+        .investment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .investment-card {
+            padding: 15px;
+            border-radius: 6px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .investment-card-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .chart-container {
+            height: 200px;
+            margin-top: 5px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        .info-item i {
+            margin-right: 10px;
+            color: #2e7d32;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .tag-blue {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        .tag-green {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .sensor-price-comparison {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .sensor-price {
+            flex: 1;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .sensor-price-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .sensor-price-value {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        .cvale-price {
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        .market-price {
+            color: #e53935;
+            border: 1px solid #ffcdd2;
+        }
+        .vs-icon {
+            font-size: 20px;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="page-content">
+<div class="sidebar">
+<div class="title-bar"></div>
+<h2 class="sidebar-title">Os Números</h2>
+<i class="fas fa-chart-bar" style="position: absolute; bottom: 40px; left: 30px; color: #1e88e5; opacity: 0.2; font-size: 80px;"></i>
+</div>
+<div class="main-content">
+<div class="section">
+<h3 class="section-title"><i class="fas fa-money-bill-wave"></i>Investimento do Projeto</h3>
+<div class="investment-grid">
+<div class="investment-card">
+<p class="investment-card-title">Valor Total</p>
+<p class="number-highlight-investment">R$ 500.850,00</p>
+</div>
+<div class="investment-card">
+<p class="investment-card-title">Fomento HUBX IA (SENAI)</p>
+<p class="number-highlight-investment">R$ 250.425,00 <span class="tag tag-blue">50%</span></p>
+</div>
+<div class="investment-card">
+<p class="investment-card-title">Investimento C.Vale</p>
+<p class="number-highlight-investment">R$ 250.425,00 <span class="tag tag-blue">50%</span></p>
+</div>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title"><i class="fas fa-microchip"></i>Custo do Sensor após Desenvolvimento</h3>
+<div class="sensor-price-comparison">
+<div class="sensor-price cvale-price">
+<p class="sensor-price-title">Sensor C.Vale (par)</p>
+<p class="sensor-price-value">R$ 6.000 - 7.000</p>
+</div>
+<div class="vs-icon">
+<i class="fas fa-exchange-alt"></i>
+</div>
+<div class="sensor-price market-price">
+<p class="sensor-price-title">Menor Preço Mercado</p>
+<p class="sensor-price-value">R$ 9.608</p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="costChart"></canvas>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title"><i class="fas fa-chart-line"></i>Benefícios Econômicos</h3>
+<div class="info-grid">
+<div class="info-item">
+<i class="fas fa-percentage"></i>
+<p>Economia no CAPEX: <span class="number-highlight-saving">~30%</span></p>
+</div>
+<div class="info-item">
+<i class="fas fa-ban"></i>
+<p>Sem mensalidade recorrente</p>
+</div>
+<div class="info-item">
+<i class="fas fa-sync-alt"></i>
+<p>ROI estimado: <span class="number-highlight-saving">2-3 anos</span></p>
+</div>
+<div class="info-item">
+<i class="fas fa-shield-alt"></i>
+<p>Controle total da tecnologia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const ctx = document.getElementById('costChart').getContext('2d');
+    const costChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Sensor C.Vale', 'PecSmart', 'Agrisolus', 'Trinovati', 'E-Aware'],
+            datasets: [{
+                label: 'Custo por Aviário (R$)',
+                data: [6500, 9608, 14102, 14280, 35501],
+                backgroundColor: [
+                    '#4caf50',
+                    '#f44336',
+                    '#f44336',
+                    '#f44336',
+                    '#f44336'
+                ],
+                borderColor: [
+                    '#388e3c',
+                    '#d32f2f',
+                    '#d32f2f',
+                    '#d32f2f',
+                    '#d32f2f'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        display: true,
+                        color: '#f0f0f0'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return 'R$ ' + value.toLocaleString();
+                        }
+                    }
+                },
+                y: {
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

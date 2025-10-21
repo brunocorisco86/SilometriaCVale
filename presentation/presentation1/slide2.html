@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>O Problema - Sensor de Silo</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #444444;
+            background-color: #ffffff;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+        }
+        .page-content {
+            display: flex;
+            min-height: 720px;
+        }
+        .sidebar {
+            background-color: #f5f7f9;
+            width: 280px;
+            padding: 60px 30px;
+            position: relative;
+        }
+        .title-bar {
+            background-color: #e74c3c;
+            height: 8px;
+            width: 60px;
+            margin-bottom: 20px;
+        }
+        .sidebar-title {
+            color: #333333;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+        }
+        .main-content {
+            padding: 60px 50px;
+            flex: 1;
+        }
+        .problem-list li {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .problem-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-size: 24px;
+            top: -8px;
+        }
+        .highlight-number {
+            color: #e74c3c;
+            font-weight: 700;
+            font-size: 22px;
+        }
+        .chart-container {
+            margin-top: 40px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .bar {
+            height: 40px;
+            margin-bottom: 15px;
+            position: relative;
+            border-radius: 4px;
+            background-color: #0b3d91;
+            opacity: 0.8;
+        }
+        .bar-label {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: 600;
+        }
+        .bar-value {
+            position: absolute;
+            right: -115px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e74c3c;
+            font-weight: 700;
+        }
+        .chart-title {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .icon-warning {
+            position: absolute;
+            bottom: 40px;
+            left: 30px;
+            color: #e74c3c;
+            opacity: 0.2;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="page-content">
+<div class="sidebar">
+<div class="title-bar"></div>
+<h2 class="sidebar-title">O Problema</h2>
+<i class="fas fa-exclamation-triangle icon-warning"></i>
+</div>
+<div class="main-content">
+<ul class="problem-list text-lg">
+<li>
+<p>Soluções comerciais custam <span class="highlight-number">R$ 9.600 a R$ 35.000</span> por aviário (2 silos)</p>
+</li>
+<li>
+<p>Dependência de fornecedores externos com tecnologia estrangeira</p>
+</li>
+<li>
+<p>Custos recorrentes de mensalidade entre <span class="highlight-number">R$ 29 a R$ 375/mês</span></p>
+</li>
+<li>
+<p>Custo total em 5 anos: <span class="highlight-number">R$ 13.441 a R$ 62.073</span> por aviário</p>
+</li>
+<li>
+<p>Sem controle sobre a tecnologia ou possibilidade de adaptação</p>
+</li>
+</ul>
+<div class="chart-container">
+<p class="chart-title">Custo total em 5 anos (por aviário)</p>
+<div style="position: relative; height: 190px;">
+<div class="bar" style="width: 35%;">
+<span class="bar-label">PecSmart</span>
+<span class="bar-value">R$ 13.441</span>
+</div>
+<div class="bar" style="width: 55%;">
+<span class="bar-label">Agrisolus</span>
+<span class="bar-value">R$ 17.352</span>
+</div>
+<div class="bar" style="width: 65%;">
+<span class="bar-label">Trinovati</span>
+<span class="bar-value">R$ 20.160</span>
+</div>
+<div class="bar" style="width: 100%;">
+<span class="bar-label">E-Aware</span>
+<span class="bar-value">R$ 62.073</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

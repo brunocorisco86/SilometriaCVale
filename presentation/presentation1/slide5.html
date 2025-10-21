@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Validação e Aprovações - Sensor de Silo</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #444444;
+            background-color: #ffffff;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+        }
+        .page-content {
+            display: flex;
+            min-height: 720px;
+        }
+        .sidebar {
+            background-color: #f5f7f9;
+            width: 280px;
+            padding: 60px 30px;
+            position: relative;
+        }
+        .title-bar {
+            background-color: #0b3d91;
+            height: 8px;
+            width: 60px;
+            margin-bottom: 20px;
+        }
+        .sidebar-title {
+            color: #333333;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+        }
+        .main-content {
+            padding: 50px 40px;
+            flex: 1;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #0b3d91;
+        }
+        .approval-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .approval-list li {
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .checkmark {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #27ae60;
+            font-size: 22px;
+        }
+        .delivery-list {
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .delivery-item {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .delivery-icon {
+            color: #0b3d91;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .timeline {
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        .timeline-item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            right: -40px;
+            width: 80px;
+            height: 2px;
+            background-color: #0b3d91;
+        }
+        .timeline-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #0b3d91;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: 700;
+        }
+        .timeline-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .timeline-duration {
+            font-size: 14px;
+            color: #777777;
+        }
+        .highlight-name {
+            color: #0b3d91;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="page-content">
+<div class="sidebar">
+<div class="title-bar"></div>
+<h2 class="sidebar-title">Validação e Aprovações</h2>
+</div>
+<div class="main-content">
+<div class="section">
+<h3 class="section-title">O que precisamos</h3>
+<ul class="approval-list text-lg">
+<li>
+<i class="fas fa-check-circle checkmark"></i>
+<p>Aprovação do Recurso - <span class="highlight-name">Maykon Buttini</span></p>
+</li>
+<li>
+<i class="fas fa-check-circle checkmark"></i>
+<p>Validação Tecnológica - <span class="highlight-name">Gestão Técnica</span></p>
+</li>
+<li>
+<i class="fas fa-check-circle checkmark"></i>
+<p>Modelo de Negócio - <span class="highlight-name">Cassiano Pasa (Inovação)</span></p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3 class="section-title">Entregas SENAI</h3>
+<div class="delivery-list">
+<div class="delivery-item">
+<i class="fas fa-microchip delivery-icon"></i>
+<p>5 unidades de protótipo funcionais</p>
+</div>
+<div class="delivery-item">
+<i class="fas fa-file-alt delivery-icon"></i>
+<p>Documentação completa (hardware/firmware)</p>
+</div>
+<div class="delivery-item">
+<i class="fas fa-vial delivery-icon"></i>
+<p>Metodologia de testes</p>
+</div>
+<div class="delivery-item">
+<i class="fas fa-chart-line delivery-icon"></i>
+<p>Relatórios técnicos</p>
+</div>
+</div>
+</div>
+<div class="section">
+<h3 class="section-title">Cronograma</h3>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-circle">1</div>
+<p class="timeline-label">PoC</p>
+<p class="timeline-duration">3 meses</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-circle">2</div>
+<p class="timeline-label">Protótipo</p>
+<p class="timeline-duration">6 meses</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-circle">3</div>
+<p class="timeline-label">Testes de Campo</p>
+<p class="timeline-duration">3 meses</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
