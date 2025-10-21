@@ -1,5 +1,3 @@
----
-
 # Knowledge Base: Geração de Valor do Sensoriamento de Silos - C.VALE (AgroCenter Expert)
 
 ## 1. Contexto e Conceito Central
