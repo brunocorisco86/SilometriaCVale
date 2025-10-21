@@ -1,5 +1,3 @@
----
-
 **Resumo da Proposta:**
 
 Estamos considerando a apresentação de uma solução de sensores para o Maykon Buttini. A ideia é apresentar uma análise simplificada em até 5 slides, destacando:
